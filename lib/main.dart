@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learn_1/home_page.dart';
 
 void main() {
   runApp(myApp());
@@ -6,15 +7,17 @@ void main() {
 
 //My App
 class myApp extends StatelessWidget {
-  const myApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Material(
-        child: Center(
-          child: Container(child: Text("Hello World")),
-        ),
-      ),
-    );
+    int myNumber = 30;
+    String name = "Jay";
+    bool check = false;
+    double number = 3.14;
+    num numcheck = 3.14;
+    var allAccept = "";
+    const id = 1234;
+    final pi = 3.14;
+
+    return MaterialApp(home: HomePage());
   }
 }
