@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_learn_1/utils/routes.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  String username = "";
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,12 +24,10 @@ class LoginPage extends StatelessWidget {
             const SizedBox(
               height: 10.0,
             ),
-            const Text(
-              "Login",
-              style: TextStyle(
-                  color: Colors.yellow,
-                  fontSize: 24,
-                  fontWeight: FontWeight.bold),
+            Text(
+              "Logins " + username,
+              style: const TextStyle(
+                  color: Colors.red, fontSize: 24, fontWeight: FontWeight.bold),
             ),
             Padding(
               padding:
@@ -33,6 +37,11 @@ class LoginPage extends StatelessWidget {
                   TextFormField(
                     decoration: const InputDecoration(
                         hintText: "Username", labelText: "Username"),
+                    onChanged: (value) {
+                      username = value;
+                      print(value + " " + username);
+                      setState(() {});
+                    },
                   ),
                   TextFormField(
                     obscureText: true,
@@ -44,7 +53,8 @@ class LoginPage extends StatelessWidget {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      // Navigator.pushNamed(context, MyRoutes.homeRoute);
+                      Navigator.pushNamed(context, MyRoutes.signupRoute);
                     },
                     child: const Text("Login"),
                     style:
