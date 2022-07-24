@@ -24,7 +24,7 @@ class _LoginPageState extends State<LoginPage> {
         }
       });
       await Future.delayed(Duration(seconds: 1));
-      Navigator.pushNamed(context, MyRoutes.signupRoute);
+      Navigator.pushNamed(context, MyRoutes.homeRoute);
     }
   }
 
@@ -61,7 +61,6 @@ class _LoginPageState extends State<LoginPage> {
                           hintText: "Username", labelText: "Username"),
                       onChanged: (value) {
                         username = value;
-                        print(value + " " + username);
                         setState(() {
                           _formKey.currentState!.validate();
                         });
@@ -82,7 +81,7 @@ class _LoginPageState extends State<LoginPage> {
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Please Enter Password.";
-                        } else if (value!.length < 6) {
+                        } else if (value.length < 6) {
                           return "Please Enter Min 6 Digit Password.";
                         }
                         return null;

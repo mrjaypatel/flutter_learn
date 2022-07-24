@@ -30,6 +30,7 @@ class myApp extends StatelessWidget {
           primarySwatch: Colors.deepOrange,
           fontFamily: GoogleFonts.lato().fontFamily),
       darkTheme: ThemeData(brightness: Brightness.dark),
+      debugShowCheckedModeBanner: false,
       routes: {
         MyRoutes.rootRoute: (context) => LoginPage(),
         MyRoutes.loginRoute: (context) => LoginPage(),
